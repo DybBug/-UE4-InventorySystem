@@ -954,13 +954,12 @@ bool UComponent_Inventory::_AddItem(const TSubclassOf<class AItem_Base>& _ItemCl
 
 			UpdateSlotAtIndex(EmptySlotIndex);
 
+			// #. 새로 추가할 아이템의 갯수 1개 감소.
+			_Amount--;
 
 			// #. 새로 추가할 아이템의 갯수가 남아있으면 다른 빈슬롯에 아이템 추가.
-			if (_Amount > 1)
+			if (_Amount >= 1)
 			{
-				// #. 새로 추가할 아이템의 갯수 1개 감소.
-				_Amount--;
-
 				_AddItem(_ItemClass, _Amount, out_pRest);
 				return true;
 			}

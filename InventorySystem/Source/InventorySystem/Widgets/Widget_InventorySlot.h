@@ -39,6 +39,7 @@ protected :
 	FButtonStyle m_DefaultButtonStyle;
 	FButtonStyle m_DraggedButtonOverStyle;
 
+	UPROPERTY()
 	class UWidget_Detail* m_pDetailWidget;
 
 public :
